@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <script>
+	function showUser() {
+    
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","getResult.php",true);
+        xmlhttp.send();
+    
+}
+showUser();
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>BO Router Management</title>
+    <script src="process.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/narrow-jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+			   </li>
+			  <li class="nav-item">
+				<a class="nav-link active" href="showData.html">Action List<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </nav>
+        <h5 class="text-muted">BO Router Management</h5>
+      </div>
+
+      
+
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <p>User List Active Deactive list</p><br/>
+          <table class="table" id="orderedProductsTbl">
+            <thead>
+              <tr>
+               
+                <th>ID</th>
+                <th>Name</th>
+				 <th>Date</th>
+				  <th>Action</th>
+               
+              </tr>
+            </thead>
+            <tbody id="txtHint">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Brother online BD</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="css/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
